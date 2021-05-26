@@ -107,12 +107,6 @@ public class TestRequestQueryService {
         return  testRequestRepository.findByRequestId(id)
                 .filter(testRequest -> labResultRepository.findByTesterAndRequest(tester,testRequest).isPresent());
 
-
-
-
-
-
-
     }
 
     public Optional<TestRequest> findByUserAndID(User user,Long id) {

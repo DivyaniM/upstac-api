@@ -52,13 +52,7 @@ public class ConsultationController {
     @PreAuthorize("hasAnyRole('DOCTOR')")
     public List<TestRequest> getForConsultations()  {
 
-        // Implement this method
 
-
-        //Implement this method to get the list of test requests having status as 'LAB_TEST_COMPLETED'
-        // make use of the findBy() method from testRequestQueryService class
-        //return the result
-        // For reference check the method getForTests() method from LabRequestController class
 
 
 
@@ -72,20 +66,12 @@ public class ConsultationController {
     @PreAuthorize("hasAnyRole('DOCTOR')")
     public List<TestRequest> getForDoctor()  {
 
-        //Implement this method
 
-        // Create an object of User class and store the current logged in user first
-        //Implement this method to return the list of test requests assigned to current doctor(make use of the above created User object)
-        //Make use of the findByDoctor() method from testRequestQueryService class to get the list
-        // For reference check the method getForTests() method from LabRequestController class
 
 
 
         User doctor = userLoggedInService.getLoggedInUser();
         return testRequestQueryService.findByDoctor(doctor);
-
-
-
 
 
 
